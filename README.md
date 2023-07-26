@@ -1,14 +1,4 @@
----
-title: GPT4Free 
-emoji: 🚀  
-colorFrom: blue  
-colorTo: yellow  
-sdk: docker  
-sdk_version: 1.24.0  
-app_file: app.py  
-pinned: true  
----
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/leeeawa/g4f/HEAD)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/AIProjectsTest/g4f/HEAD)
  
 By using this repository or any code related to it, you agree to the [legal notice](./LEGAL_NOTICE.md). The author is not responsible for any copies, forks, or reuploads made by other users. This is the author's only account and repository. To prevent impersonation or irresponsible actions, you may comply with the GNU GPL license this Repository uses.
 
