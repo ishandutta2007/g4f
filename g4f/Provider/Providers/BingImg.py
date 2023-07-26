@@ -52,7 +52,8 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
             if src:
                 image_urls.add(src)
     if not image_urls:
-        return 'Image generation error. This is because our service has malfunctioned.'
+        yield 'Image generation error. This is because our service has malfunctioned.'
+        return
     for img in image_urls:
         yield '![]('+img+')'
 

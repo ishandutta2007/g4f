@@ -31,6 +31,7 @@ from .Providers import (
     Poe,
     Slack,
     BingImg,
+    Fusionbrain,
 )
 
 Palm = Bard
