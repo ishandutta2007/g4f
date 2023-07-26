@@ -34,7 +34,6 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
     headers = {'Authorization':'Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Imluc18yTzZ3UTFYd3dxVFdXUWUyQ1VYZHZ2bnNaY2UiLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwczovL2NoYXQuZm9yZWZyb250LmFpIiwiZXhwIjoxNjkwMzU0ODYyLCJpYXQiOjE2OTAzNTQ4MDIsImlzcyI6Imh0dHBzOi8vY2xlcmsuZm9yZWZyb250LmFpIiwibmJmIjoxNjkwMzU0NzkyLCJzaWQiOiJzZXNzXzJUNjlQWFo4VEpyb2lmMldmMHlpeU1TOXlPdiIsInN1YiI6InVzZXJfMlQ2OVBZdGNYeXBBa0Q3UDl1a1ZQTkdGWDRGIn0.bxp-NUcGfGvKHqTl6FYCVUrPVtLTSNfwAKCDVEesp2by2y2UFhTX7iDwbkNh4OzJtJglsdIo2sKvyiuBCoVDGHmPKSjD3D62FXC7xEaXaJ6EQuhgDgpMin4qlAoCUvYWSy9KQRW0YCcIqhJ65-u3XvKT610G2RSt70vf4Bwhu9q-LRdd4YEIXvtBd2BIQOm9daLG1w5qTb0xwegDJaWp4rocf5ey64XvxJVoXEMgIgOW6LxfMl9n6hUe7artfkVNiEFnNWp9lc-zW-h8uSk9u6DTCQuOJEURnRcrV55PJJXLa7lxgt70bNsABCt60ewo8JLjL9iDdK3kGgtvFaj3eQ'}
     response = requests.post('https://streaming-worker.forefront.workers.dev/chat',
         json=json_data, stream=True,headers=headers)
-    print(response.text)
     for token in response.iter_lines(): 
         if b'delta' in token:
             token = json.loads(token.decode().split('data: ')[1])['delta']
