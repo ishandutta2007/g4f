@@ -28,7 +28,8 @@ model = [
     'sage',
     'llama-2-7b-chat',
     'llama-2-13b-chat',
-    'llama-2-70b-chat'
+    'llama-2-70b-chat',
+    'kandinsky'
 ]
 
 supports_stream = True
@@ -37,16 +38,23 @@ working = True
 
 def _create_completion(model: str, messages: list, stream: bool, **kwargs):
     try:
-        response = openai.ChatCompletion.create(
-            model=model,
-            messages=messages,
-            stream=stream
-        )
-        if stream:
-            for chunk in response:
-                yield chunk.choices[0].delta.get("content", "")
+        if model == 'kandinsky':
+            response = openai.Image.create(prompt=messages[-1]['content'],n=1,size="1024x1024")
+            try:
+                yield '![]('+response["data"][0]["url"]+')'
+            except:
+                yield 'Image generation error. This may be because your image is illegal or our service has malfunctioned.'
         else:
-            yield response.choices[0]['message'].get("content", "")
+            response = openai.ChatCompletion.create(
+                model=model,
+                messages=messages,
+                stream=stream
+            )
+            if stream:
+                for chunk in response:
+                    yield chunk.choices[0].delta.get("content", "")
+            else:
+                yield response.choices[0]['message'].get("content", "")
             
     except openai.error.APIError as e:
         if e.http_status == 429:
