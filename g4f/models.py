@@ -202,6 +202,11 @@ class Model:
         name: str = 'kandinsky'
         base_provider: str = 'Fusionbrain'
         best_provider: Provider.Provider = Provider.Fusionbrain
+    
+    class bing:
+        name: str = 'bing'
+        base_provider: str = 'Bing'
+        best_provider: Provider.Provider = Provider.Bing
         
 class ModelUtils:
     convert: dict = {
@@ -260,5 +265,6 @@ class ModelUtils:
         'llama-2-13b-chat': Model.llama_2_13b_chat,
         'llama-2-70b-chat': Model.llama_2_70b_chat,
         'dall-e': Model.dall_e,
-        'kandinsky': Model.kandinsky
+        'kandinsky': Model.kandinsky,
+        'bing': Model.bing
     }
