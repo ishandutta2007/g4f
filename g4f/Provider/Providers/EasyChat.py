@@ -28,6 +28,7 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
         'usesearch': 'false',
         'x-requested-with': 'XMLHttpRequest',
+        'Cookie': 'Hm_lvt_563fb31e93813a8a7094966df6671d3f=1690081938; cf_clearance=1jRhucaEPxeT0LtYHhC6.LJrhbVeksv38wGsFoCd1Rk-1690368274-0-250.2.1690368274'
     }
 
     json_data = {
