@@ -38,7 +38,7 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
         'top_p': kwargs.get('top_p', 1),
         "stream": True,
     }
-    response = requests.post('https://chat.dfehub.com/api/openai/v1/chat/completions',
+    response = requests.post('https://gptleg.zeabur.app/api/openai/v1/chat/completions',
         headers=headers, json=json_data)
     
     for chunk in response.iter_lines():
