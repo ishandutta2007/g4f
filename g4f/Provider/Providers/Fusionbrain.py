@@ -19,14 +19,16 @@ HEADERS = {
 
 def _create_completion(model: str, messages: list, stream: bool, **kwargs):
     q = messages[-1]['content']
-    q = Translator(from_lang ='autodetect',to_lang="en").translate(q)
+    qt = Translator(from_lang ='autodetect',to_lang="en").translate(q)
+    if qt == 'PLEASE SELECT TWO DISTINCT LANGUAGES':
+        qt=q
     boundary = '----WebKitFormBoundaryAvV9KCrOGx8dToxn'
     data_list = [
     f'--{boundary}\r\n',
     'Content-Disposition: form-data; name="params"; filename="blob"\r\n',
     'Content-Type: application/json\r\n',
     '\r\n',
-    '{"type":"GENERATE","style":"DEFAULT","width":1024,"height":1024,"generateParams":{"query":"'+q+'"}}\r\n', 
+    '{"type":"GENERATE","style":"DEFAULT","width":1024,"height":1024,"generateParams":{"query":"'+qt+'"}}\r\n', 
     f'--{boundary}--'
     ]
     data = ''.join(data_list)
