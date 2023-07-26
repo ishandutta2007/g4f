@@ -1,0 +1,17 @@
+name: Sync with HuggingFace Hub
+on:
+  push:
+    branches:
+      - main
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Sync with HuggingFace
+      uses: nateraw/huggingface-sync-action@v0.0.4
+      with:
+        github_repo_id: AIProjectsTest/g4f
+        huggingface_repo_id: g4f/g4f
+        repo_type: space
+        space_sdk: docker
+        hf_token: ${{ secrets.HF_TOKEN }}
