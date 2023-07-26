@@ -17,3 +17,4 @@ slack-sdk==3.21.3
 poe-api==0.4.17
 vercel-llm-api==0.3.0
 beautifulsoup4==4.12.2
+translate
