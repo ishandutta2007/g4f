@@ -4,8 +4,8 @@ import poe
 from ...typing import sha256, Dict, get_type_hints
 
 url = 'https://poe.com/'
-models = {'gpt-3.5-turbo':'capybara','claude-instant':'a2','palm':'acouchy','palm2':'acouchy','bard':'acouchy','google-bard':'acouchy','google-palm':'acouchy'}
-model = ['gpt-3.5-turbo','claude-instant','palm2']
+models = {'gpt-3.5-turbo':'capybara','claude-instant':'a2','palm':'acouchy','palm2':'acouchy','bard':'acouchy','google-bard':'acouchy','google-palm':'acouchy','llama-2-70b-chat':'llama_2_70b_chat'}
+model = ['gpt-3.5-turbo','claude-instant','palm2','llama-2-70b-chat']
 supports_stream = True
 needs_auth = False
 working = True
