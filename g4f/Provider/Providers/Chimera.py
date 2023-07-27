@@ -1,5 +1,6 @@
 import re
 import os
+from translate import Translator
 import openai
 import openai.error
 from dotenv import load_dotenv
@@ -39,6 +40,10 @@ working = True
 def _create_completion(model: str, messages: list, stream: bool, **kwargs):
     try:
         if model == 'kandinsky':
+            q = messages[-1]['content']
+            qt = Translator(from_lang ='autodetect',to_lang="en").translate(q)
+            if qt == 'PLEASE SELECT TWO DISTINCT LANGUAGES':
+                qt=q
             response = openai.Image.create(prompt=messages[-1]['content'],n=1,size="1024x1024")
             try:
                 yield '![]('+response["data"][0]["url"]+')'
