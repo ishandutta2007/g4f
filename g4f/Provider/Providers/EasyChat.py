@@ -3,7 +3,7 @@ from ...typing import sha256, Dict, get_type_hints
 import json
 
 url = "https://free.easychat.work"
-model = ['gpt-3.5-turbo','gpt-3.5-turbo-16k']
+model = ['gpt-3.5-turbo','gpt-3.5-turbo-0301','gpt-3.5-turbo-0613','gpt-3.5-turbo-16k']
 supports_stream = True
 needs_auth = False
 working = True
