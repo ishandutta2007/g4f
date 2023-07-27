@@ -53,6 +53,11 @@ class Model:
         base_provider: str = 'reversed'
         best_provider: Provider.Provider = Provider.Chimera
 
+    class gpt_4_0613:
+        name: str = 'gpt-4-0613'
+        base_provider: str = 'openai'
+        best_provider: Provider.Provider = Provider.Liaobots
+
     class gpt_4_poe:
         name: str = 'gpt-4-poe'
         base_provider: str = 'poe'
@@ -225,6 +230,7 @@ class ModelUtils:
         
         'gpt-4': Model.gpt_4,
         'gpt-4-0314': Model.gpt_4_0314,
+        'gpt-4-0613': Model.gpt_4_0613,
         'gpt-4-poe': Model.gpt_4_poe,
         'gpt-4-32k': Model.gpt_4_32k,
         'gpt-4-32k-poe': Model.gpt_4_32k_poe,
