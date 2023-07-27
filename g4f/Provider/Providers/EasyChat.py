@@ -41,7 +41,7 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
         'top_p': kwargs.get('top_p', 1),
     }
 
-    response = requests.post('https://easychat.lemonsoftware.eu.org/api/openai/v1/chat/completions',
+    response = requests.post('https://easychat.provider.lemonsoftware.eu.org/api/openai/v1/chat/completions',
         headers=headers, json=json_data)
     for chunk in response.iter_lines():
         if b'content' in chunk:

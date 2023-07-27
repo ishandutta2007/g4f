@@ -10,8 +10,8 @@ needs_auth = False
 working = True
 model = ['claude-2']
 
-cookies = 'sessionKey=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; intercom-device-id-lupk8zyo=537137f7-d63c-4597-b612-2f5f32615a8b; intercom-session-lupk8zyo=Vk9kQjZpckdiRzlyd2lqSW4rR1BOSFNNNzJiWElwcHI2bVByUXZhNzUrVXN4MVd1OEowR0tDTVh1STlmcnN6bS0tVFZ1bWdpNkdMNzRyWTQvWTNhaDBRUT09--d354a97da2b9a18785b9dbb03eb392dda456cdf0; __cf_bm=3j8nLojJCpR4QHwtF2UpgqvA0VOXGOiQIYzm0FWs9xA-1689490831-0-AVKf3/AErZz0g47J30F/c+toy4Zk7uP+L5HmhTjBpDzNhK1cF5HuGq7NLvGAKbQ1MYvBiWQkDGWoPZdLJNTCTpY='
-user = '55a415d1-0264-4d52-a7ec-2adc2e050806'
+cookies = 'sessionKey=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; intercom-device-id-lupk8zyo=723e5224-2cf5-499d-94f0-a544809f80c0; intercom-session-lupk8zyo=YzRFV1FXTFBBNDZsVVdxbFpoVWRGeTVmMmNqRVhlZFpKaVJ3YkMyM21saVFVRG9rYmdwTTE4cWxsZFRlZFhUUS0tYkJPZHBMMkkzZDV6dnM2eGVKZk9LZz09--2fc7d343a082574166926853f201bc418b2f11d2; __cf_bm=0IpkLTxsKKInsJb2G7Cb4MT9yQQvVY.iWWrAL2O3Vgo-1690472331-0-AZCY331k6nkFO0lMtzi6ljJI4AoSPi0MBqKxc65PJd6aC5DoJJ3/MSWYgdM4WNg36LPMzAAkzSJLxnQzwo5nNf4='
+user = '7491288a-406a-490b-acf2-ef374b375c61'
 h1 = {
   'Authority': 'claude.ai',
   'Scheme': 'https',

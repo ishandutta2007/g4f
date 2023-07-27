@@ -21,11 +21,6 @@ class Model:
         name: str = 'gpt-3.5-turbo-0613'
         base_provider: str = 'openai'
         best_provider: Provider.Provider = Provider.Phind
-    
-    class gpt_35_turbo_poe:
-        name: str = 'gpt-3.5-turbo-poe'
-        base_provider: str = 'poe'
-        best_provider: Provider.Provider = Provider.Chimera
 
     class gpt_35_turbo_16k:
         name: str = 'gpt-3.5-turbo-16k'
@@ -36,11 +31,6 @@ class Model:
         name: str = 'gpt-3.5-turbo-16k-0613'
         base_provider: str = 'openai'
         best_provider: Provider.Provider = Provider.Vercel
-
-    class gpt_35_turbo_16k_poe:
-        name: str = 'gpt-3.5-turbo-16k-poe'
-        base_provider: str = 'poe'
-        best_provider: Provider.Provider = Provider.Chimera
         
     class gpt_4:
         name: str = 'gpt-4'
@@ -57,20 +47,10 @@ class Model:
         name: str = 'gpt-4-0613'
         base_provider: str = 'openai'
         best_provider: Provider.Provider = Provider.Liaobots
-
-    class gpt_4_poe:
-        name: str = 'gpt-4-poe'
-        base_provider: str = 'poe'
-        best_provider: Provider.Provider = Provider.Chimera
         
     class gpt_4_32k:
         name: str = 'gpt-4-32k'
         base_provider: str = 'reversed'
-        best_provider: Provider.Provider = Provider.Chimera
-        
-    class gpt_4_32k_poe:
-        name: str = 'gpt-4-32k-poe'
-        base_provider: str = 'poe'
         best_provider: Provider.Provider = Provider.Chimera
 
     class claude_1:
@@ -86,7 +66,7 @@ class Model:
     class claude_instant:
         name: str = 'claude-instant'
         base_provider: str = 'anthropic'
-        best_provider: Provider.Provider = Provider.Chimera
+        best_provider: Provider.Provider = Provider.Poe
         
     class claude_2:
         name: str = 'claude-2'
@@ -182,11 +162,6 @@ class Model:
         name: str = 'llama-13b'
         base_provider: str = 'huggingface'
         best_provider: Provider.Provider = Provider.H2o
-        
-    class sage:
-        name: str = 'sage'
-        base_provider: str = 'poe'
-        best_provider: Provider.Provider = Provider.Chimera
 
     class llama_2_7b_chat:
         name: str = 'llama-2-7b-chat'
@@ -223,17 +198,13 @@ class ModelUtils:
         'gpt-3.5-turbo': Model.gpt_35_turbo,
         'gpt-3.5-turbo-0301': Model.gpt_35_turbo_0301,
         'gpt-3.5-turbo-0613': Model.gpt_35_turbo_0613,
-        'gpt-3.5-turbo-poe': Model.gpt_35_turbo_poe,
         'gpt-3.5-turbo-16k': Model.gpt_35_turbo_16k,
         'gpt-3.5-turbo-16k-0613': Model.gpt_35_turbo_16k_0613,
-        'gpt-3.5-turbo-16k-poe': Model.gpt_35_turbo_16k_poe,
         
         'gpt-4': Model.gpt_4,
         'gpt-4-0314': Model.gpt_4_0314,
         'gpt-4-0613': Model.gpt_4_0613,
-        'gpt-4-poe': Model.gpt_4_poe,
         'gpt-4-32k': Model.gpt_4_32k,
-        'gpt-4-32k-poe': Model.gpt_4_32k_poe,
         
         'claude-1': Model.claude_1,
         
@@ -272,7 +243,6 @@ class ModelUtils:
         'falcon-7b': Model.falcon_7b,
         'llama-13b': Model.llama_13b,
 
-        'sage': Model.sage,
         'llama-2-7b-chat': Model.llama_2_7b_chat,
         'llama-2-13b-chat': Model.llama_2_13b_chat,
         'llama-2-70b-chat': Model.llama_2_70b_chat,

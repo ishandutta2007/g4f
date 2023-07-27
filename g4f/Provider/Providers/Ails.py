@@ -79,7 +79,7 @@ def _create_completion(model: str, messages: list, stream: bool = False, **kwarg
         'stream': True,
          'messages': messages} | sig)
 
-    response = requests.post('https://api.caipacity.com/v1/chat/completions?full=false', 
+    response = requests.post('https://ails.provider.lemonsoftware.eu.org/v1/chat/completions?full=false', 
                              headers=headers, data=json_data, stream=True)
     for token in response.iter_lines():
         if token != None:

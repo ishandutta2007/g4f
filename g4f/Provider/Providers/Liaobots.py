@@ -21,12 +21,18 @@ models = {'gpt-3.5-turbo-16k': {
 }}
 
 def _create_completion(model: str, messages: list, stream: bool, **kwargs):
-    r = requests.get("https://liaobots.lemonsoftware.eu.org/")
+    headerss = {'Content-Type': 'application/json',
+      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.4 Safari/605.1.15',
+      'Accept-Language': 'en-US,en;q=0.5',
+      'Sec-Fetch-Dest': 'empty',
+      'Sec-Fetch-Mode': 'cors',
+      'Sec-Fetch-Site': 'same-origin'}
+    r = requests.post("https://liaobots.provider.lemonsoftware.eu.org/api/user",headers=headerss,json={'authcode': '' },impersonate='safari15_5')
     try:
         authcode = r.json()['authCode']
     except:
         try:
-            r = requests.get("https://liaobots.lemonsoftware.eu.org/")
+            r = requests.post("https://liaobots.provider.lemonsoftware.eu.org/api/user",headers=headerss,json={'authcode': '' },impersonate='safari15_5')
             authcode = r.json()['authCode']
         except:
             authcode = 'JpuMaphc6RHUG'
@@ -56,7 +62,7 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
         'prompt': "You are ChatGPT, a large language model trained by OpenAI. Follow the user's instructions carefully. Respond using markdown.",
     }
 
-    response = requests.post('https://liaobots.cdn.lemonsoftware.eu.org/api/chat', 
+    response = requests.post('https://liaobots.provider.lemonsoftware.eu.org/api/chat', 
                              headers=headers,json=json_data,impersonate='safari15_5')
     yield response.text
     '''
