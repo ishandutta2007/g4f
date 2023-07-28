@@ -13,7 +13,7 @@ url: str = 'https://ai.ls'
 model = ['gpt-3.5-turbo']
 supports_stream = True
 needs_auth = False
-working =  True
+working = False
 
 
 class Utils:
