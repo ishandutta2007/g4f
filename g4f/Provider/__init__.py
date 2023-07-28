@@ -32,6 +32,7 @@ from .Providers import (
     Slack,
     BingImg,
     Fusionbrain,
+    Bingo,
 )
 
 Palm = Bard

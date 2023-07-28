@@ -34,5 +34,4 @@ dist/
 *.egg
 *.egg-info
 build
-test.py
 .space
