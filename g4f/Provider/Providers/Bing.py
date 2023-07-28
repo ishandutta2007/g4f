@@ -306,7 +306,7 @@ async def stream_generate(prompt: str, mode: optionsSets.optionSet = optionsSets
 
 
 def run(generator):
-    loop = asyncio.get_event_loop()
+    loop = asyncio.new_event_loop()
     gen = generator.__aiter__()
 
     while True:
