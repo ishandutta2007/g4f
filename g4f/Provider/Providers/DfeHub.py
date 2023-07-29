@@ -8,7 +8,7 @@ url = "https://chat.dfehub.com/api/chat"
 model = ['gpt-3.5-turbo' ,'gpt-4']
 supports_stream = True
 needs_auth = False
-working = True
+working = False
 
 
 def _create_completion(model: str, messages: list, stream: bool, **kwargs):
