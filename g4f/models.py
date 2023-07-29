@@ -76,7 +76,7 @@ class Model:
     class claude_2_100k:
         name: str = 'claude-2-100k'
         base_provider: str = 'anthropic'
-        best_provider: Provider.Provider = Provider.Chimera
+        best_provider: Provider.Provider = Provider.ClaudeAI
         
     class bloom:
         name: str = 'bloom'
@@ -234,9 +234,6 @@ class ModelUtils:
         'palm2': Model.palm,
         'palm': Model.palm,
         'chat-bison-001': Model.palm,
-        'google': Model.palm,
-        'google-bard': Model.palm,
-        'google-palm': Model.palm,
         'bard': Model.palm,
         
         'falcon-40b': Model.falcon_40b,

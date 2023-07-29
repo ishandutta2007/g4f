@@ -12,24 +12,7 @@ from fastapi.openapi.utils import get_openapi
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from pydantic import BaseModel
 
-files = os.listdir("g4f/Provider/Providers")
-files = [f for f in files if os.path.isfile(os.path.join("g4f/Provider/Providers", f))]
-files.sort(key=str.lower)
-providers_data = {"data":[]}
-for file in files:
-  if file.endswith(".py"):
-    name = file[:-3]
-    try:
-        p = getattr(g4f.Provider,name)
-        providers_data["data"].append({
-        "provider": str(name),
-        "model": list(p.model),
-        "url": str(p.url),
-        "working": bool(p.working),
-        "supports_stream": bool(p.supports_stream)
-        })
-    except:
-          pass
+
 
 #app = FastAPI(docs_url=None, redoc_url=None)
 app = FastAPI()
@@ -366,6 +349,24 @@ def models():
 
 @app.get("/v1/providers")
 async def providers():
+  files = os.listdir("g4f/Provider/Providers")
+  files = [f for f in files if os.path.isfile(os.path.join("g4f/Provider/Providers", f))]
+  files.sort(key=str.lower)
+  providers_data = {"data":[]}
+  for file in files:
+    if file.endswith(".py"):
+      name = file[:-3]
+      try:
+          p = getattr(g4f.Provider,name)
+          providers_data["data"].append({
+          "provider": str(name),
+          "model": list(p.model),
+          "url": str(p.url),
+          "working": bool(p.working),
+          "supports_stream": bool(p.supports_stream)
+          })
+      except:
+            pass
   return providers_data
 
 def custom_openapi():
