@@ -8,7 +8,7 @@ url = 'https://claude.ai/chats'
 supports_stream = True
 needs_auth = False
 working = True
-model = ['claude-2']
+model = ['claude-2','claude-2-100k']
 
 cookies = 'sessionKey=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; intercom-device-id-lupk8zyo=723e5224-2cf5-499d-94f0-a544809f80c0; intercom-session-lupk8zyo=YzRFV1FXTFBBNDZsVVdxbFpoVWRGeTVmMmNqRVhlZFpKaVJ3YkMyM21saVFVRG9rYmdwTTE4cWxsZFRlZFhUUS0tYkJPZHBMMkkzZDV6dnM2eGVKZk9LZz09--2fc7d343a082574166926853f201bc418b2f11d2; __cf_bm=0IpkLTxsKKInsJb2G7Cb4MT9yQQvVY.iWWrAL2O3Vgo-1690472331-0-AZCY331k6nkFO0lMtzi6ljJI4AoSPi0MBqKxc65PJd6aC5DoJJ3/MSWYgdM4WNg36LPMzAAkzSJLxnQzwo5nNf4='
 user = '7491288a-406a-490b-acf2-ef374b375c61'
