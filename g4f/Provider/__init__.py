@@ -19,7 +19,6 @@ from .Providers import (
     Phind,
     Poe,
     Slack,
-    BingImg,
     Fusionbrain,
     Bingo,
 )

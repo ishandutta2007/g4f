@@ -1,7 +1,7 @@
 import g4f
 
-stream = False
-response = g4f.ChatCompletion.create(model='gpt-4', provider=g4f.Provider.Bing, messages=[
+stream = True
+response = g4f.ChatCompletion.create(model='dall-e', provider=g4f.Provider.Bing, messages=[
                                      {"role": "user", "content": "Hi"}], stream=stream)
 
 if stream:

@@ -180,7 +180,7 @@ class Model:
     class dall_e:
         name: str = 'dall-e'
         base_provider: str = 'Bing'
-        best_provider: Provider.Provider = Provider.BingImg
+        best_provider: Provider.Provider = Provider.Bing
 
     class kandinsky:
         name: str = 'kandinsky'
