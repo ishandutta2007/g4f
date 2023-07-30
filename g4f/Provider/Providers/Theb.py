@@ -4,7 +4,8 @@ import time
 import subprocess
 import sys
 from re import findall
-from curl_cffi import requests
+#from curl_cffi import requests
+import requests
 from ...typing import sha256, Dict, get_type_hints
 
 url = 'https://chatbot.theb.ai'
@@ -41,10 +42,10 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
         'options': {}
     }
     response = requests.post('https://chatbot.theb.ai/api/chat-process', 
-                            headers=headers, json=json_data, impersonate='chrome110')
-    for chunk in response.text.splitlines():
+                            headers=headers, json=json_data, stream=True) # impersonate='chrome110'
+    for chunk in response.iter_lines():
         try:
-            completion_chunk = findall(r'content":"(.*)"},"fin', chunk)[0]
+            completion_chunk = findall(r'content":"(.*)"},"fin', chunk.decode())[0]
             yield completion_chunk
         except:
             pass
