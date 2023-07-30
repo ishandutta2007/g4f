@@ -21,4 +21,5 @@ from .Providers import (
     Slack,
     Fusionbrain,
     Bingo,
+    ChatFree,
 )
