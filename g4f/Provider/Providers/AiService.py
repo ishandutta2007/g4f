@@ -1,5 +1,5 @@
-import os,sys
-import requests
+import os
+from curl_cffi import requests
 from ...typing import get_type_hints
 
 url = "https://aiservice.vercel.app/api/chat/answer"
@@ -22,11 +22,13 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
         "sec-fetch-mode": "cors",
         "sec-fetch-site": "same-origin",
         "Referer": "https://aiservice.vercel.app/chat",
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36',
+
     }
     data = {
         "input": base
     }
-    response = requests.post(url, headers=headers, json=data)
+    response = requests.post(url, headers=headers, json=data,impersonate='chrome110')
     if response.status_code == 200:
         _json = response.json()
         yield _json['data']

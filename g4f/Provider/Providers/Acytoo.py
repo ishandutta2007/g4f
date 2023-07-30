@@ -1,4 +1,5 @@
-import os, requests
+import os
+from curl_cffi import requests
 from ...typing import sha256, Dict, get_type_hints
 import json
 
@@ -15,7 +16,7 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
     base += 'assistant:'
 
     headers = {
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
     }
     data = {
         "key": "",
@@ -31,7 +32,7 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
         "password": ""
     }
 
-    response = requests.post(url, headers=headers, data=json.dumps(data))
+    response = requests.post(url, headers=headers,impersonate='chrome110', data=json.dumps(data))
     if response.status_code == 200:
         yield response.text
     else:

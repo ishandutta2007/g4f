@@ -1,5 +1,6 @@
 import os
-import requests, re
+from curl_cffi import requests
+import re
 from ...typing import sha256, Dict, get_type_hints
 
 url = 'https://chatgpt.ai/gpt-4/'
@@ -32,7 +33,7 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
         'sec-fetch-dest': 'empty',
         'sec-fetch-mode': 'cors',
         'sec-fetch-site': 'same-origin',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36',
     }
     data = {
         '_wpnonce': nonce,
@@ -44,7 +45,7 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
     }
 
     response = requests.post('https://chatgpt.ai/wp-admin/admin-ajax.php', 
-                            headers=headers, data=data)
+                            headers=headers, data=data,impersonate='chrome110')
 
     yield (response.json()['data'])
 
