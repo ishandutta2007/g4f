@@ -30,4 +30,5 @@ from .Providers import (
     Free2gpt,
     AiFree,
     B88,
+    EzChat,
 )

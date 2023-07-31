@@ -2,8 +2,8 @@ import os, requests
 from ...typing import sha256, Dict, get_type_hints
 import json
 
-url = "https://free.easychat.work"
-model = ['gpt-3.5-turbo','gpt-3.5-turbo-0301','gpt-3.5-turbo-0613','gpt-3.5-turbo-16k']
+url = "https://gpt4.ezchat.top/"
+model = ['gpt-3.5-turbo','gpt-3.5-turbo-0301','gpt-3.5-turbo-0613','gpt-3.5-turbo-16k','gpt-3.5-turbo-16k-0613']
 supports_stream = True
 needs_auth = False
 working = True
@@ -11,14 +11,14 @@ working = True
 
 def _create_completion(model: str, messages: list, stream: bool, **kwargs):
     headers = {
-        'authority': 'cf1.easychat.work',
+        'authority': 'gpt4.ezchat.top',
         'accept': 'text/event-stream',
         'accept-language': 'en,fr-FR;q=0.9,fr;q=0.8,es-ES;q=0.7,es;q=0.6,en-US;q=0.5,am;q=0.4,de;q=0.3',
         'content-type': 'application/json',
         'endpoint': '',
-        'origin': 'https://cf1.easychat.work',
+        'origin': 'https://gpt4.ezchat.top',
         'plugins': '0',
-        'referer': 'https://cf1.easychat.work/',
+        'referer': 'https://gpt4.ezchat.top/',
         'sec-ch-ua': '"Not.A/Brand";v="8", "Chromium";v="114", "Google Chrome";v="114"',
         'sec-ch-ua-mobile': '?0',
         'sec-ch-ua-platform': '"Windows"',
@@ -28,7 +28,7 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
         'usesearch': 'false',
         'x-requested-with': 'XMLHttpRequest',
-        'Cookie': 'Hm_lvt_563fb31e93813a8a7094966df6671d3f=1690081938; cf_clearance=1jRhucaEPxeT0LtYHhC6.LJrhbVeksv38wGsFoCd1Rk-1690368274-0-250.2.1690368274'
+        'Authorization':'Bearer ak-EZGPT'
     }
 
     json_data = {
@@ -41,7 +41,7 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
         'top_p': kwargs.get('top_p', 1),
     }
 
-    response = requests.post('https://easychat.provider.lemonsoftware.eu.org/api/openai/v1/chat/completions',
+    response = requests.post('https://gpt4.ezchat.top/api/openai/v1/chat/completions',
         headers=headers, json=json_data,stream=True)
     for chunk in response.iter_lines():
         if b'content' in chunk:

@@ -1,8 +1,8 @@
 import g4f
 
 stream = True
-response = g4f.ChatCompletion.create(model='claude-instant-100k', provider=g4f.Provider.B88, messages=[
-                                     {"role": "user", "content": "hi"}], stream=stream)
+response = g4f.ChatCompletion.create(model='gpt-3.5-turbo', provider=g4f.Provider.EasyChat, messages=[
+                                     {"role": "user", "content": "Hi"}], stream=stream)
 
 if stream:
     for message in response:
