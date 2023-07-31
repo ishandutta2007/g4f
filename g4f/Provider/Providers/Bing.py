@@ -361,7 +361,7 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
             return
         image_urls = set()
         t = 0
-        while len(image_urls)<4 and t<80:
+        while len(image_urls)<4 and t<60:
             time.sleep(0.5)
             t += 0.5
             r = requests.get("https://bing.lemonsoftware.eu.org/images/create/async/results/"+id+"?q="+params['q'],headers=HEADERS)

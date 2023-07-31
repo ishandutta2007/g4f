@@ -23,4 +23,11 @@ from .Providers import (
     Bingo,
     ChatFree,
     PerplexityAI,
+    PowerChat,
+    ChatGPTunli,
+    Zhulei,
+    PizzaGPT,
+    Free2gpt,
+    AiFree,
+    B88,
 )

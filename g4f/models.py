@@ -45,7 +45,7 @@ class Model:
     class gpt_4_0613:
         name: str = 'gpt-4-0613'
         base_provider: str = 'openai'
-        best_provider: Provider.Provider = Provider.Chimera
+        best_provider: Provider.Provider = Provider.Phind
         
     class gpt_4_32k:
         name: str = 'gpt-4-32k'
@@ -60,7 +60,7 @@ class Model:
     class claude_instant_100k:
         name: str = 'claude-instant-100k'
         base_provider: str = 'anthropic'
-        best_provider: Provider.Provider = Provider.Chimera
+        best_provider: Provider.Provider = Provider.B88
 
     class claude_instant:
         name: str = 'claude-instant'
@@ -142,8 +142,8 @@ class Model:
         base_provider: str = 'openai'
         best_provider: Provider.Provider = Provider.Vercel
         
-    class palm:
-        name: str = 'palm'
+    class palm2:
+        name: str = 'palm2'
         base_provider: str = 'google'
         best_provider: Provider.Provider = Provider.Poe
     
@@ -230,10 +230,10 @@ class ModelUtils:
         'text-davinci-002': Model.text_davinci_002,
         'text-davinci-003': Model.text_davinci_003,
         
-        'palm2': Model.palm,
-        'palm': Model.palm,
-        'chat-bison-001': Model.palm,
-        'bard': Model.palm,
+        'palm2': Model.palm2,
+        'palm': Model.palm2,
+        'chat-bison-001': Model.palm2,
+        'bard': Model.palm2,
         
         'falcon-40b': Model.falcon_40b,
         'falcon-7b': Model.falcon_7b,

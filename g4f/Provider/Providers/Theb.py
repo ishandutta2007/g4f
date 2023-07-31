@@ -43,9 +43,9 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
     }
     response = requests.post('https://chatbot.theb.ai/api/chat-process', 
                             headers=headers, json=json_data, stream=True) # impersonate='chrome110'
-    for chunk in response.iter_lines():
+    for chunk in response.iter_lines(chunk_size=2048):
         try:
-            completion_chunk = findall(r'content":"(.*)"},"fin', chunk.decode())[0]
+            completion_chunk = findall(r'content":"(.*)"},"fin', chunk.decode(errors='ignore'))[0]
             yield completion_chunk
         except:
             pass

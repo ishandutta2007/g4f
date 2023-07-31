@@ -15,7 +15,7 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
     path = os.path.dirname(os.path.realpath(__file__))
     conversation = '这是一个人和一个语言模型之间的对话。语言模型应该始终作为助理进行响应，如果需要，可以参考过去的消息历史。\n'
     for message in messages:
-        conversation += '%s: %s\n' % (message['role'], message['content'])
+        conversation += '%s：%s\n' % (message['role'], message['content'])
     conversation += '助理: '
     index = random.randrange(len(token))
     client = poe.Client(token[index],formkey=formkey[index])
