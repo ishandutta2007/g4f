@@ -124,7 +124,7 @@ def _format(msg: dict) -> str:
 
 async def create_conversation():
     for _ in range(5):
-        create = requests.get('https://WWW.bing.com/turing/conversation/create',
+        create = requests.get('https://bing.lemonsoftware.eu.org/turing/conversation/create',
                               headers={
                                   'authority': 'edgeservices.bing.com',
                                   'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
@@ -166,7 +166,7 @@ async def stream_generate(prompt: str, mode: optionsSets.optionSet = optionsSets
 
     conversationId, clientId, conversationSignature = await create_conversation()
 
-    wss = await session.ws_connect('wss://sydney.bing.com/sydney/ChatHub', ssl=ssl_context, autoping=False,
+    wss = await session.ws_connect('wss://sydney.lemonsoftware.eu.org/sydney/ChatHub', ssl=ssl_context, autoping=False,
                                    headers={
                                        'accept': 'application/json',
                                        'accept-language': 'en-US,en;q=0.9',

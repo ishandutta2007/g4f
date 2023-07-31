@@ -5,8 +5,8 @@ import re
 import os
 from ...typing import sha256, Dict, get_type_hints
 
-url = 'https://bing2.lemonsoftware.eu.org/'
-model = ['gpt-4','bing']
+url = 'https://hf4all-bingo.hf.space/'
+model = ['bing']
 supports_stream = True
 needs_auth = False
 working = True
