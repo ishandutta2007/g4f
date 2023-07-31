@@ -1,7 +1,7 @@
 import g4f
 
 stream = True
-response = g4f.ChatCompletion.create(model='gpt-3.5-turbo', provider=g4f.Provider.Theb, messages=[
+response = g4f.ChatCompletion.create(model='llama-2-7b-chat', provider=g4f.Provider.PerplexityAI, messages=[
                                      {"role": "user", "content": "Hi"}], stream=stream)
 
 if stream:

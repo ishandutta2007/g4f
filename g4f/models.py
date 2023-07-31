@@ -165,17 +165,17 @@ class Model:
     class llama_2_7b_chat:
         name: str = 'llama-2-7b-chat'
         base_provider: str = 'replicate'
-        best_provider: Provider.Provider = Provider.Chimera
+        best_provider: Provider.Provider = Provider.PerplexityAI
 
     class llama_2_13b_chat:
         name: str = 'llama-2-13b-chat'
         base_provider: str = 'replicate'
-        best_provider: Provider.Provider = Provider.Chimera
+        best_provider: Provider.Provider = Provider.PerplexityAI
 
     class llama_2_70b_chat:
         name: str = 'llama-2-70b-chat'
         base_provider: str = 'replicate'
-        best_provider: Provider.Provider = Provider.Chimera
+        best_provider: Provider.Provider = Provider.PerplexityAI
 
     class dall_e:
         name: str = 'dall-e'

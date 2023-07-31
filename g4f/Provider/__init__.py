@@ -22,4 +22,5 @@ from .Providers import (
     Fusionbrain,
     Bingo,
     ChatFree,
+    PerplexityAI,
 )
