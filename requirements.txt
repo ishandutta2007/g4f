@@ -14,8 +14,8 @@ tls-client
 free-proxy
 fastapi[all]==0.100.0
 slack-sdk==3.21.3
-poe-api==0.4.17
-vercel-llm-api==0.3.0
+poe-api==0.5.2
+vercel-llm-api==0.3.1
 beautifulsoup4==4.12.2
 translate
 python-socketio

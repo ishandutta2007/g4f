@@ -13,7 +13,7 @@ models = {
 model = models.keys()
 supports_stream = True
 needs_auth = False
-working = True
+working = False
 
 headers = {
         'Content-Type':'application/json',
