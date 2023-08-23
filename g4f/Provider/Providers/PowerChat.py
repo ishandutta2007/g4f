@@ -15,7 +15,8 @@ headers = {
     'Referer':'https://powerchat.top/',
     'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36',
     'Content-Type':'text/plain;charset=UTF-8',
-    'Version':'1.0'
+    'Email':'bivovo9887@prdalu.com',
+    'token': '0186c85ddd468a62e16d6c9f0ba691f14bc1dfdbc568668b9e190ac636731380'
 }
 
 def _create_completion(model: str, messages: list, stream: bool, **kwargs):
@@ -24,7 +25,7 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
     timestamp_in_milliseconds = int(round(timestamp_in_seconds * 1000))
     sign = str(timestamp_in_milliseconds)+':question:contact_me_to_work_together_hello@promptboom.com'
     sign = hashlib.sha256(sign.encode('utf-8')).hexdigest()
-    data = '{"did":"060ca8eaa0625da25d61ae94d4a2cf99","chatList":'+json.dumps(messages)+',"special":{"time":'+str(timestamp_in_milliseconds)+',"sign":"'+sign+'","referer":"https://github.com/","path":"https://powerchat.top/"}}'
+    data = '{"did":"0a4d835f983a6ca5f6f4a80e996ce784","chatList":'+json.dumps(messages)+',"botID":"default","special":{"referer":"no-referer","path":"https://powerchat.top/chat/PowerChat"}}'
     data = base64.b64encode(data.encode('utf-8')).decode()
     r = requests.post('https://api.powerchat.top/requestPowerChat',json={'data':data},headers=headers,stream=True)
     for chunk in r.iter_content(chunk_size=2048):
