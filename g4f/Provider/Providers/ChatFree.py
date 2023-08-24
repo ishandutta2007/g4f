@@ -6,7 +6,7 @@ url = "https://v.chatfree.cc"
 model = ['gpt-3.5-turbo','gpt-3.5-turbo-0301','gpt-3.5-turbo-0613','gpt-3.5-turbo-16k','gpt-3.5-turbo-16k-0613']
 supports_stream = True
 needs_auth = False
-working = True
+working = False
 
 def _create_completion(model: str, messages: list, stream: bool, **kwargs):
     headers = {

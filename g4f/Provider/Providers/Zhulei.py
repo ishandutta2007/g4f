@@ -6,7 +6,7 @@ url = 'https://chat.zhulei.xyz/'
 model = ['gpt-3.5-turbo']
 supports_stream = True
 needs_auth = False
-working = True
+working = False
 
 headers = {
     'Origin':'https://chat.zhulei.xyz',

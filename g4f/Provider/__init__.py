@@ -1,7 +1,6 @@
 from . import Provider
 from .Providers import (
     Bing,
-    Theb,
     Aichat,
     Vercel,
     Forefront,
@@ -24,11 +23,9 @@ from .Providers import (
     ChatFree,
     PerplexityAI,
     PowerChat,
-    ChatGPTunli,
     Zhulei,
     PizzaGPT,
     Free2gpt,
     AiFree,
-    B88,
     EzChat,
 )

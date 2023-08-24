@@ -10,12 +10,12 @@ class Model:
     class gpt_35_turbo:
         name: str = 'gpt-3.5-turbo'
         base_provider: str = 'openai'
-        best_provider: Provider.Provider = Provider.Chimera
+        best_provider: Provider.Provider = Provider.PizzaGPT
         
     class gpt_35_turbo_0301:
         name: str = 'gpt-3.5-turbo-0301'
         base_provider: str = 'openai'
-        best_provider: Provider.Provider = Provider.Chimera
+        best_provider: Provider.Provider = Provider.Gravityengine
 
     class gpt_35_turbo_0613:
         name: str = 'gpt-3.5-turbo-0613'
@@ -25,7 +25,7 @@ class Model:
     class gpt_35_turbo_16k:
         name: str = 'gpt-3.5-turbo-16k'
         base_provider: str = 'openai'
-        best_provider: Provider.Provider = Provider.Chimera
+        best_provider: Provider.Provider = Provider.Gravityengine
     
     class gpt_35_turbo_16k_0613:
         name: str = 'gpt-3.5-turbo-16k-0613'
@@ -35,7 +35,7 @@ class Model:
     class gpt_4:
         name: str = 'gpt-4'
         base_provider: str = 'openai'
-        best_provider: Provider.Provider = Provider.Chimera
+        best_provider: Provider.Provider = Provider.ChatgptAi
         
     class gpt_4_0314:
         name: str = 'gpt-4-0314'
@@ -60,7 +60,7 @@ class Model:
     class claude_instant_100k:
         name: str = 'claude-instant-100k'
         base_provider: str = 'anthropic'
-        best_provider: Provider.Provider = Provider.B88
+        best_provider: Provider.Provider = Provider.Poe
 
     class claude_instant:
         name: str = 'claude-instant'

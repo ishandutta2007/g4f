@@ -33,6 +33,7 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
 
     json_data = {
         'messages': messages,
+        'chat_token': '0',
         'stream': True,
         'model': model,
         'temperature': kwargs.get('temperature', 0.5),
