@@ -27,5 +27,4 @@ from .Providers import (
     PizzaGPT,
     Free2gpt,
     AiFree,
-    EzChat,
 )
